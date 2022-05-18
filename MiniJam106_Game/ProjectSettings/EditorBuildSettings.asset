@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 376e0b69f40a9444ea4ee32b75ac7ce0
+  - enabled: 1
+    path: Assets/Scenes/Game/TadpoleScene.unity
+    guid: 486974404c28bda489ac27dc564f23fc
+  - enabled: 1
+    path: Assets/Scenes/Game/FrogletScene.unity
+    guid: 0d07519dd90e34241a567d925ee92d8f
+  - enabled: 1
+    path: Assets/Scenes/Game/FrogScene.unity
+    guid: a41c736b30ba2f14ebc4e6f23572c8f4
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 077872653226edb4895330e18ca04025
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 8f536006474a8ff41957b2934f627dca
+  m_configObjects: {}
