@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class FrogletController : MonoBehaviour
 {
@@ -26,11 +27,17 @@ public class FrogletController : MonoBehaviour
     {
         HorizontalMovement(); 
         Jump();
+
+        if(transform.position.y < -1)
+        {
+            FindObjectOfType<GameManager>().EndGame(); 
+        }
     }
 
     private void HorizontalMovement()
     {
-        transform.Translate(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime * speedH);
+        //transform.Translate(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime * speedH);
+        gameObject.GetComponent<Rigidbody>().AddForce(Input.GetAxis("Horizontal") * speedH * Time.deltaTime, 0, 0, ForceMode.VelocityChange); 
     }
 
     void ForwardMovement()
@@ -48,7 +55,12 @@ public class FrogletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(count);
-        count++;
+        if(collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log(count);
+            count++;
+            FindObjectOfType<GameManager>().EndGame();
+        }
+      
     }
 }
